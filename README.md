@@ -18,12 +18,12 @@ Deleting always goes to a trash folder first, and the chat you're currently in c
 ## Example
 
 ```
-> /claude-chat-cleaner:delete the empty ones and anything about Vela
+> /claude-chat-cleaner:delete the empty ones and anything about the weather app
 
   #  Title                                   Last active   Size    Prompts
-  1  Claude Code plugin status               3 days ago    312 KB  15
-  2  Vela's descent into the Kestrel Belt    6 days ago    438 KB  4
-  3  Vela's co-pilot assignment              11 days ago   295 KB  2
+  1  Fix flaky login test                     3 days ago    312 KB  15
+  2  Weather app: add hourly forecast         6 days ago    438 KB  4
+  3  Weather app: fix dark mode colors        11 days ago   295 KB  2
   4  (no messages)                           17 days ago   267 B   0   (empty)
 
   I'll move 2, 3 and 4 to the trash.
@@ -33,7 +33,7 @@ Deleting always goes to a trash folder first, and the chat you're currently in c
   Moved 3 chats to the trash. You can restore them for 30 days with /claude-chat-cleaner:restore.
 ```
 
-You can describe what to delete in plain words: `3 5-7`, `the empty ones`, `older than a month`, `the Kaggle ones`.
+You can describe what to delete in plain words: `3 5-7`, `the empty ones`, `older than a month`, `the weather app ones`.
 
 ## Install
 
