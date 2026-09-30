@@ -1,5 +1,5 @@
 {
-  "name": "claude-chats",
+  "name": "claude-chat-cleaner",
   "version": "0.1.0",
   "description": "Claude Code plugin to list, delete and restore your chats.",
   "private": true,
@@ -9,6 +9,6 @@
     "node": ">=18"
   },
   "scripts": {
-    "test": "node --test test/chats.test.mjs"
+    "test": "node --test test/chat-cleaner.test.mjs"
   }
 }

@@ -1,6 +1,6 @@
 ---
 name: empty-trash
-description: Permanently delete Claude Code chats that are in the chats trash folder. Only run when the user invokes /chats:empty-trash.
+description: Permanently delete Claude Code chats that are in the chats trash folder. Only run when the user invokes /chat-cleaner:empty-trash.
 argument-hint: "[older-than days | chat numbers]"
 disable-model-invocation: true
 allowed-tools: Bash(node:*), AskUserQuestion
@@ -13,7 +13,7 @@ This permanently deletes chats. It can't be undone.
 ## 1. Show the trash
 
 ```bash
-node "${CLAUDE_PLUGIN_ROOT}/scripts/chats.mjs" trash --json
+node "${CLAUDE_PLUGIN_ROOT}/scripts/chat-cleaner.mjs" trash --json
 ```
 
 If `trash` is empty, say so and stop. Otherwise show a table with these columns: `#`, Title, Deleted and Days left.
@@ -36,7 +36,7 @@ Only continue if they choose "Yes, delete forever".
 ## 4. Run
 
 ```bash
-node "${CLAUDE_PLUGIN_ROOT}/scripts/chats.mjs" empty-trash [<id> ...] [--older-than N] --json
+node "${CLAUDE_PLUGIN_ROOT}/scripts/chat-cleaner.mjs" empty-trash [<id> ...] [--older-than N] --json
 ```
 
 Report how many chats were removed (`removed`).

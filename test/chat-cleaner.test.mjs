@@ -13,9 +13,9 @@ import {
   restoreChats,
   emptyTrash,
   encodeProject,
-} from '../scripts/chats.mjs';
+} from '../scripts/chat-cleaner.mjs';
 
-const SCRIPT = fileURLToPath(new URL('../scripts/chats.mjs', import.meta.url));
+const SCRIPT = fileURLToPath(new URL('../scripts/chat-cleaner.mjs', import.meta.url));
 const DAY = 24 * 60 * 60 * 1000;
 
 const A = 'aaaaaaaa-1111-4111-8111-111111111111';
@@ -45,7 +45,7 @@ function setMtime(file, ms) {
 
 // Builds a fake ~/.claude with four chats in two projects.
 function makeConfig({ now = Date.now() } = {}) {
-  const config = fs.mkdtempSync(path.join(os.tmpdir(), 'chats-test-'));
+  const config = fs.mkdtempSync(path.join(os.tmpdir(), 'chat-cleaner-test-'));
   const proj = path.join(config, 'projects', encodeProject(CWD));
   const other = path.join(config, 'projects', encodeProject(OTHER_CWD));
 

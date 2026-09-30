@@ -27,7 +27,7 @@ export function encodeProject(cwd) {
 }
 
 function defaultTrashDays() {
-  const raw = process.env.CHATS_TRASH_DAYS;
+  const raw = process.env.CHAT_CLEANER_TRASH_DAYS;
   if (raw === undefined || raw === '') return 30;
   const n = Number(raw);
   return Number.isFinite(n) && n >= 0 ? n : 30;
@@ -272,7 +272,7 @@ function move(from, to) {
 }
 
 function writeAtomic(file, content) {
-  const tmp = `${file}.chats-tmp-${process.pid}`;
+  const tmp = `${file}.chat-cleaner-tmp-${process.pid}`;
   fs.writeFileSync(tmp, content, { mode: 0o600 });
   fs.renameSync(tmp, file);
 }
@@ -535,8 +535,8 @@ function printText(command, res) {
     for (const d of res.deleted) lines.push(`Moved to trash: ${d.shortId}  ${d.title}`);
     lines.push(
       res.trashDays > 0
-        ? `Restore within ${res.trashDays} days with: chats.mjs restore <id>`
-        : 'Restore any time with: chats.mjs restore <id>',
+        ? `Restore within ${res.trashDays} days with: chat-cleaner.mjs restore <id>`
+        : 'Restore any time with: chat-cleaner.mjs restore <id>',
     );
   } else if (command === 'trash') {
     if (!res.trash.length) lines.push('The trash is empty.');
@@ -553,7 +553,7 @@ function printText(command, res) {
   console.log(lines.join('\n'));
 }
 
-const HELP = `Usage: chats.mjs <command> [options]
+const HELP = `Usage: chat-cleaner.mjs <command> [options]
 
 Commands:
   list [--all]                 List chats for this folder (or every folder)
@@ -571,7 +571,7 @@ Options:
 
 Environment:
   CLAUDE_CONFIG_DIR   Claude Code config folder (default: ~/.claude)
-  CHATS_TRASH_DAYS    Days to keep deleted chats (default 30, 0 = forever)`;
+  CHAT_CLEANER_TRASH_DAYS    Days to keep deleted chats (default 30, 0 = forever)`;
 
 function parseArgs(argv) {
   const out = { _: [], json: false, all: false };
