@@ -604,7 +604,7 @@ async function main(argv) {
   }
 
   const opts = {
-    cwd: args.cwd ? path.resolve(args.cwd) : undefined,
+    cwd: args.cwd && !path.isAbsolute(args.cwd) ? path.resolve(args.cwd) : args.cwd,
     current: [args.current, process.env.CLAUDE_CODE_SESSION_ID, process.env.CLAUDE_SESSION_ID].find((v) =>
       UUID_RE.test(v ?? ''),
     ),
