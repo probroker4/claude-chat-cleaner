@@ -9,6 +9,6 @@
     "node": ">=18"
   },
   "scripts": {
-    "test": "node --test test/chat-cleaner.test.mjs"
+    "test": "node --test test/claude-chat-cleaner.test.mjs"
   }
 }

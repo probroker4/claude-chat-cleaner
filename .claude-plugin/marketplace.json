@@ -9,7 +9,7 @@
   },
   "plugins": [
     {
-      "name": "chat-cleaner",
+      "name": "claude-chat-cleaner",
       "source": "./",
       "description": "List, delete and restore your Claude Code chats from inside Claude Code. Deleted chats go to a trash folder first.",
       "version": "0.1.0",

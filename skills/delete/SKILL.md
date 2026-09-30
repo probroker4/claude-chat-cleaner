@@ -1,6 +1,6 @@
 ---
 name: delete
-description: Delete Claude Code chats by moving them to a trash folder, after the user confirms. Only run when the user invokes /chat-cleaner:delete.
+description: Delete Claude Code chats by moving them to a trash folder, after the user confirms. Only run when the user invokes /claude-chat-cleaner:delete.
 argument-hint: "[which chats, e.g. \"3 5-7\", \"empty ones\", \"older than 30 days\", \"all\" for every project]"
 disable-model-invocation: true
 allowed-tools: Bash(node:*), AskUserQuestion
@@ -8,12 +8,12 @@ allowed-tools: Bash(node:*), AskUserQuestion
 
 # Delete chats
 
-The user wants to delete some of their Claude Code chats. Deleted chats go to a trash folder and can be restored with `/chat-cleaner:restore`.
+The user wants to delete some of their Claude Code chats. Deleted chats go to a trash folder and can be restored with `/claude-chat-cleaner:restore`.
 
 ## 1. List the chats
 
 ```bash
-node "${CLAUDE_PLUGIN_ROOT}/scripts/chat-cleaner.mjs" list --json --current "${CLAUDE_SESSION_ID}"
+node "${CLAUDE_PLUGIN_ROOT}/scripts/claude-chat-cleaner.mjs" list --json --current "${CLAUDE_SESSION_ID}"
 ```
 
 Add `--all` if the user's request ("$ARGUMENTS") mentions every project or folder, or names chats that aren't in this folder. If the output has `"ok": false`, show the `error` and stop.
@@ -40,11 +40,11 @@ Only continue if they choose "Yes, delete them".
 Pass the full `id` of each chosen chat:
 
 ```bash
-node "${CLAUDE_PLUGIN_ROOT}/scripts/chat-cleaner.mjs" delete <id> <id> ... --json --current "${CLAUDE_SESSION_ID}"
+node "${CLAUDE_PLUGIN_ROOT}/scripts/claude-chat-cleaner.mjs" delete <id> <id> ... --json --current "${CLAUDE_SESSION_ID}"
 ```
 
 If `ok` is false, show the error. Nothing was deleted in that case.
 
 ## 5. Report
 
-List what was moved to the trash. If `trashDays` is above 0, say the chats stay restorable for `trashDays` days with `/chat-cleaner:restore`. If it is 0, say they can be restored any time. If `purged` is not empty, mention that older chats that had been in the trash too long were removed for good.
+List what was moved to the trash. If `trashDays` is above 0, say the chats stay restorable for `trashDays` days with `/claude-chat-cleaner:restore`. If it is 0, say they can be restored any time. If `purged` is not empty, mention that older chats that had been in the trash too long were removed for good.

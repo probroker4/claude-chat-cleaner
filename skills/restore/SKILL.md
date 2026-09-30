@@ -10,7 +10,7 @@ allowed-tools: Bash(node:*), AskUserQuestion
 ## 1. Show the trash
 
 ```bash
-node "${CLAUDE_PLUGIN_ROOT}/scripts/chat-cleaner.mjs" trash --json
+node "${CLAUDE_PLUGIN_ROOT}/scripts/claude-chat-cleaner.mjs" trash --json
 ```
 
 If `trash` is empty, say the trash is empty and stop. Otherwise show a table with these columns: `#`, Title, Project, Deleted (`deletedAgo`) and Days left (`daysLeft`, or "kept" when it is null).
@@ -24,7 +24,7 @@ If "$ARGUMENTS" already says which chats to restore, use that. Otherwise ask whi
 Pass the full `id` of each chosen chat:
 
 ```bash
-node "${CLAUDE_PLUGIN_ROOT}/scripts/chat-cleaner.mjs" restore <id> <id> ... --json
+node "${CLAUDE_PLUGIN_ROOT}/scripts/claude-chat-cleaner.mjs" restore <id> <id> ... --json
 ```
 
 If `ok` is false, show the error. Nothing was restored in that case. The usual cause is a file with the same name already existing where the chat would go back.
