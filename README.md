@@ -21,9 +21,9 @@ Deleting always goes to a trash folder first, and the chat you're currently in c
 > /claude-chat-cleaner:delete the empty ones and anything about the weather app
 
   #  Title                                   Last active   Size    Prompts
-  1  Fix flaky login test                     3 days ago    312 KB  15
-  2  Weather app: add hourly forecast         6 days ago    438 KB  4
-  3  Weather app: fix dark mode colors        11 days ago   295 KB  2
+  1  Fix flaky login test                    3 days ago    312 KB  15
+  2  Weather app: add hourly forecast        6 days ago    438 KB  4
+  3  Weather app: fix dark mode colors       11 days ago   295 KB  2
   4  (no messages)                           17 days ago   267 B   0   (empty)
 
   I'll move 2, 3 and 4 to the trash.
