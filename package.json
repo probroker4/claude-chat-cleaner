@@ -1,0 +1,14 @@
+{
+  "name": "claude-chats",
+  "version": "0.1.0",
+  "description": "Claude Code plugin to list, delete and restore your chats.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/chats.test.mjs"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "claude-chats",
+  "owner": {
+    "name": "Krishiv_probroker4",
+    "url": "https://github.com/probroker4"
+  },
+  "metadata": {
+    "description": "Manage your Claude Code chat history."
+  },
+  "plugins": [
+    {
+      "name": "chats",
+      "source": "./",
+      "description": "List, delete and restore your Claude Code chats from inside Claude Code. Deleted chats go to a trash folder first.",
+      "version": "0.1.0",
+      "license": "MIT",
+      "category": "productivity"
+    }
+  ]
+}

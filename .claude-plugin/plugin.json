@@ -1,0 +1,13 @@
+{
+  "name": "chats",
+  "version": "0.1.0",
+  "description": "List, delete and restore your Claude Code chats from inside Claude Code. Deleted chats go to a trash folder first.",
+  "author": {
+    "name": "Krishiv_probroker4",
+    "url": "https://github.com/probroker4"
+  },
+  "homepage": "https://github.com/probroker4/claude-chats",
+  "repository": "https://github.com/probroker4/claude-chats",
+  "license": "MIT",
+  "keywords": ["chats", "sessions", "history", "delete", "cleanup", "privacy"]
+}
